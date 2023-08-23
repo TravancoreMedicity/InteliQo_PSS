@@ -18,7 +18,6 @@ import { GoDiff } from "react-icons/go";
 import { IoIosGitNetwork } from "react-icons/io";
 import { VscMortarBoard, VscLaw, VscFeedback } from "react-icons/vsc";
 import { CNavGroup, CNavItem } from '@coreui/react'
-
 import recruitMenuArray from '../Menus/AttendanceMang'
 import AttendanceManagement from '../Menus/AttendanceMang'
 import Employeerecord from '../Menus/EmployeeRecord'
@@ -34,7 +33,7 @@ import { Box } from '@mui/material'
 
 
 const AppSidebar = () => {
-
+  const { FETCH_LOGIN_CRED } = Actiontypes;
   const [empRecruit, setRecruitMenuArray] = useState();
   const [empRecord, setEmployeerecord] = useState();
   const [empAttendance, setAttendanceManagement] = useState();
@@ -118,6 +117,20 @@ const AppSidebar = () => {
 
   const [menu, setMenu] = useState([])
 
+
+  useEffect(() => {
+    const userinfo = sessionStorage.getItem('userDetl');
+    const emp_no = userinfo ? JSON.parse(sessionStorage.getItem('userDetl')).empno : 0;
+    const emp_id = userinfo ? JSON.parse(sessionStorage.getItem('userDetl')).empid : 0;
+
+    const loggedDetl = {
+      empno: emp_no,
+      empid: emp_id
+    }
+    dispatch({ type: FETCH_LOGIN_CRED, payload: loggedDetl })
+  }, [])
+
+
   useEffect(() => {
 
     //MENU RIGHTS FROM HERE
@@ -187,10 +200,10 @@ const AppSidebar = () => {
     }
     getModuleUserRight()
   }, [count])
-  const em_name = useSelector((state) => {
-    return state.getProfileData.ProfileData[0].em_name
-    //const status = state.getProfileData.lodingStatus
-  })
+  // const em_name = useSelector((state) => {
+  //   return state.getProfileData.ProfileData[0].em_name
+  //   //const status = state.getProfileData.lodingStatus
+  // })
 
   return (
     <Fragment>
@@ -215,7 +228,7 @@ const AppSidebar = () => {
             <Box sx={{ p: 1, display: "flex", textTransform: 'capitalize', fontStyle: "oblique", }} >
               <CssVarsProvider>
                 <Typography textColor="text.secondary">
-                  {em_name.toLowerCase()}
+                  {/* {em_name.toLowerCase()} */}
                 </Typography>
               </CssVarsProvider>
             </Box>

@@ -64,8 +64,11 @@ const Login = () => {
           empno: data.emp_no,
           empid: data.emp_id
         }
+        // console.log(loggedDetl);
         dispatch({ type: FETCH_LOGIN_CRED, payload: loggedDetl })
         const loggedCredential = sessionStorage.setItem('userDetl', JSON.stringify(loggedDetl));
+
+        // console.log(loggedCredential);
         if (loggedCredential !== null) {
           history.push("/home")
         }
