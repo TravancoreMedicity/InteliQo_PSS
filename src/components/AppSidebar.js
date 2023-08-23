@@ -18,6 +18,7 @@ import { GoDiff } from "react-icons/go";
 import { IoIosGitNetwork } from "react-icons/io";
 import { VscMortarBoard, VscLaw, VscFeedback } from "react-icons/vsc";
 import { CNavGroup, CNavItem } from '@coreui/react'
+
 import recruitMenuArray from '../Menus/AttendanceMang'
 import AttendanceManagement from '../Menus/AttendanceMang'
 import Employeerecord from '../Menus/EmployeeRecord'
@@ -30,7 +31,6 @@ import { getMenuSlno } from 'src/views/Constant/Constant'
 import CIcon from '@coreui/icons-react'
 import { CssVarsProvider, Typography } from '@mui/joy'
 import { Box } from '@mui/material'
-
 
 const AppSidebar = () => {
   const { FETCH_LOGIN_CRED } = Actiontypes;
@@ -200,10 +200,10 @@ const AppSidebar = () => {
     }
     getModuleUserRight()
   }, [count])
-  // const em_name = useSelector((state) => {
-  //   return state.getProfileData.ProfileData[0].em_name
-  //   //const status = state.getProfileData.lodingStatus
-  // })
+  const em_name = useSelector((state) => {
+    return state.getProfileData.ProfileData[0].em_name
+    //const status = state.getProfileData.lodingStatus
+  })
 
   return (
     <Fragment>
@@ -228,7 +228,7 @@ const AppSidebar = () => {
             <Box sx={{ p: 1, display: "flex", textTransform: 'capitalize', fontStyle: "oblique", }} >
               <CssVarsProvider>
                 <Typography textColor="text.secondary">
-                  {/* {em_name.toLowerCase()} */}
+                  {em_name.toLowerCase()}
                 </Typography>
               </CssVarsProvider>
             </Box>
