@@ -53,7 +53,6 @@ const Login = () => {
         });
 
       const data = result.data;
-
       if (data.success === 0) {
         errorNofity("User does not exsit");
       } else {
@@ -64,11 +63,8 @@ const Login = () => {
           empno: data.emp_no,
           empid: data.emp_id
         }
-        // console.log(loggedDetl);
         dispatch({ type: FETCH_LOGIN_CRED, payload: loggedDetl })
         const loggedCredential = sessionStorage.setItem('userDetl', JSON.stringify(loggedDetl));
-
-        // console.log(loggedCredential);
         if (loggedCredential !== null) {
           history.push("/home")
         }

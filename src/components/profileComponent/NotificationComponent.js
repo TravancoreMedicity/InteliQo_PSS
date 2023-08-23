@@ -50,64 +50,64 @@ const NotificationContent = ({ handleClose, alerts }) => {
 
 
 const NotificationComponent = ({ anchorEl, open, handleClose, setalertcount }) => {
-    // const [alert, setAlert] = useState([])
-    // const [empDetl, setEmpdetl] = useState([])
-    // const alertlist = useSelector((state) => {
-    //     return state.getAlertList.alertList
+    const [alert, setAlert] = useState([])
+    const [empDetl, setEmpdetl] = useState([])
+    const alertlist = useSelector((state) => {
+        return state.getAlertList.alertList
 
-    // })
-    // const empdetails = useSelector((state) => {
-    //     return state.getProfileData.ProfileData
-    // })
-    // useEffect(() => {
-    //     if (Object.keys(alertlist).length > 0) {
-    //         setAlert(alertlist)
-    //     }
-    //     if (Object.keys(empdetails).length > 0) {
-    //         setEmpdetl(empdetails)
-    //     }
+    })
+    const empdetails = useSelector((state) => {
+        return state.getProfileData.ProfileData
+    })
+    useEffect(() => {
+        if (Object.keys(alertlist).length > 0) {
+            setAlert(alertlist)
+        }
+        if (Object.keys(empdetails).length > 0) {
+            setEmpdetl(empdetails)
+        }
 
-    // }, [alertlist, empdetails,])
+    }, [alertlist, empdetails,])
 
-    // const alerts = empDetl.map((value) => {
-    //     return alert.filter((val) => {
-    //         return (val.alert_branch === 1 && val.alert_department === 0 && val.aler_deptsec === 0 && val.designation === 0 && val.emp_category === 0) && (val.alert_expr_date >= moment(new Date()).format('YYYY-MM-DD 00:00:00')) ||
+    const alerts = empDetl.map((value) => {
+        return alert.filter((val) => {
+            return (val.alert_branch === 1 && val.alert_department === 0 && val.aler_deptsec === 0 && val.designation === 0 && val.emp_category === 0) && (val.alert_expr_date >= moment(new Date()).format('YYYY-MM-DD 00:00:00')) ||
 
-    //             ((val.alert_branch !== 0 && val.alert_department !== 0 && val.aler_deptsec === 0 && val.designation === 0 && val.emp_category === 0)
-    //                 && (val.alert_department === value.em_department) && (val.alert_expr_date >= moment(new Date()).format('YYYY-MM-DD 00:00:00'))) ||
+                ((val.alert_branch !== 0 && val.alert_department !== 0 && val.aler_deptsec === 0 && val.designation === 0 && val.emp_category === 0)
+                    && (val.alert_department === value.em_department) && (val.alert_expr_date >= moment(new Date()).format('YYYY-MM-DD 00:00:00'))) ||
 
-    //             ((val.alert_branch !== 0 && val.alert_department === 0 && val.aler_deptsec === 0 &&
-    //                 val.designation !== 0 && val.emp_category === 0) && (val.designation === value.em_designation) && (val.alert_expr_date >= moment(new Date()).format('YYYY-MM-DD 00:00:00'))) ||
+                ((val.alert_branch !== 0 && val.alert_department === 0 && val.aler_deptsec === 0 &&
+                    val.designation !== 0 && val.emp_category === 0) && (val.designation === value.em_designation) && (val.alert_expr_date >= moment(new Date()).format('YYYY-MM-DD 00:00:00'))) ||
 
-    //             ((val.alert_branch !== 0 && val.alert_department === 0 && val.aler_deptsec === 0 &&
-    //                 val.designation === 0 && val.emp_category !== 0) && (val.emp_category === value.em_category) && (val.alert_expr_date >= moment(new Date()).format('YYYY-MM-DD 00:00:00'))) ||
+                ((val.alert_branch !== 0 && val.alert_department === 0 && val.aler_deptsec === 0 &&
+                    val.designation === 0 && val.emp_category !== 0) && (val.emp_category === value.em_category) && (val.alert_expr_date >= moment(new Date()).format('YYYY-MM-DD 00:00:00'))) ||
 
-    //             ((val.alert_branch !== 0 && val.alert_department !== 0 && val.aler_deptsec !== 0
-    //                 && val.designation === 0 && val.emp_category === 0) && ((val.alert_department === value.em_department)
-    //                     && (val.aler_deptsec === value.em_dept_section)) && (val.alert_expr_date >= moment(new Date()).format('YYYY-MM-DD 00:00:00'))) ||
+                ((val.alert_branch !== 0 && val.alert_department !== 0 && val.aler_deptsec !== 0
+                    && val.designation === 0 && val.emp_category === 0) && ((val.alert_department === value.em_department)
+                        && (val.aler_deptsec === value.em_dept_section)) && (val.alert_expr_date >= moment(new Date()).format('YYYY-MM-DD 00:00:00'))) ||
 
-    //             ((val.alert_branch !== 0 && val.alert_department !== 0 && val.aler_deptsec !== 0 &&
-    //                 val.designation !== 0 && val.emp_category === 0) && ((val.alert_department === value.em_department)
-    //                     && (val.aler_deptsec === value.em_dept_section) && (val.designation === value.em_designation)) && (val.alert_expr_date >= moment(new Date()).format('YYYY-MM-DD 00:00:00'))) ||
+                ((val.alert_branch !== 0 && val.alert_department !== 0 && val.aler_deptsec !== 0 &&
+                    val.designation !== 0 && val.emp_category === 0) && ((val.alert_department === value.em_department)
+                        && (val.aler_deptsec === value.em_dept_section) && (val.designation === value.em_designation)) && (val.alert_expr_date >= moment(new Date()).format('YYYY-MM-DD 00:00:00'))) ||
 
-    //             ((val.alert_branch !== 0 && val.alert_department !== 0 && val.aler_deptsec !== 0 &&
-    //                 val.designation !== 0 && val.emp_category !== 0) && ((val.alert_department === value.em_department)
-    //                     && (val.aler_deptsec === value.em_dept_section) && (val.designation === value.em_designation) && (val.emp_category === value.em_category) && (val.alert_expr_date >= moment(new Date()).format('YYYY-MM-DD 00:00:00'))) ||
+                ((val.alert_branch !== 0 && val.alert_department !== 0 && val.aler_deptsec !== 0 &&
+                    val.designation !== 0 && val.emp_category !== 0) && ((val.alert_department === value.em_department)
+                        && (val.aler_deptsec === value.em_dept_section) && (val.designation === value.em_designation) && (val.emp_category === value.em_category) && (val.alert_expr_date >= moment(new Date()).format('YYYY-MM-DD 00:00:00'))) ||
 
-    //                 ((val.alert_branch !== 0 && val.alert_department !== 0 && val.aler_deptsec !== 0 &&
-    //                     val.designation === 0 && val.emp_category !== 0) && ((val.alert_department === value.em_department)
-    //                         && (val.aler_deptsec === value.em_dept_section) && (val.emp_category === value.em_category)) && (val.alert_expr_date >= moment(new Date()).format('YYYY-MM-DD 00:00:00')))
-    //             )
-    //     })
-    // })
-    // useEffect(() => {
-    //     if (alerts[0] !== undefined) {
-    //         setalertcount(alerts[0].length)
-    //     }
-    // }, [alerts, setalertcount])
+                    ((val.alert_branch !== 0 && val.alert_department !== 0 && val.aler_deptsec !== 0 &&
+                        val.designation === 0 && val.emp_category !== 0) && ((val.alert_department === value.em_department)
+                            && (val.aler_deptsec === value.em_dept_section) && (val.emp_category === value.em_category)) && (val.alert_expr_date >= moment(new Date()).format('YYYY-MM-DD 00:00:00')))
+                )
+        })
+    })
+    useEffect(() => {
+        if (alerts[0] !== undefined) {
+            setalertcount(alerts[0].length)
+        }
+    }, [alerts, setalertcount])
     return (
         <Fragment>
-            {/* <Menu
+            <Menu
                 id="notification-menu"
                 anchorEl={anchorEl}
                 open={open}
@@ -122,7 +122,7 @@ const NotificationComponent = ({ anchorEl, open, handleClose, setalertcount }) =
                         return <NotificationContent key={val.alert_slno} alerts={val} handleClose={handleClose} />
                     })
                 }
-            </Menu> */}
+            </Menu>
         </Fragment>
     )
 }
