@@ -17,7 +17,7 @@ const Home = () => {
     return (
         <Fragment>
             {/* Top Time Display and Notification Icon Bar */}
-            <AppMenuBar />
+            {/* <AppMenuBar /> */}
             <Box
                 sx={{
                     width: '100%',
@@ -44,7 +44,7 @@ const Home = () => {
                                 padding: 0.5
                                 // height: 300
                             }} >
-                                <DashAlertCmp />
+                                {/* <DashAlertCmp /> */}
                             </Box>
                             {/* Dash Board Box End */}
                             {/* Table List Box */}
@@ -58,14 +58,14 @@ const Home = () => {
                                     width: { xl: "50%", lg: "50%", md: "100%", sm: "100%" },
                                     padding: 0.5
                                 }} >
-                                    <HolidayList />
+                                    {/* <HolidayList /> */}
                                 </Box>
                                 <Box sx={{
                                     display: "flex",
                                     width: { xl: "50%", lg: "50%", md: "100%", sm: "100%" },
                                     padding: 0.5
                                 }}>
-                                    <LeavesDashbod />
+                                    {/* <LeavesDashbod /> */}
                                 </Box>
                             </Box>
                             {/* Table List Box End */}
@@ -78,8 +78,8 @@ const Home = () => {
                             flexDirection: { xl: "column", lg: "column", md: "column", sm: "row" },
                             padding: 0.5,
                         }} >
-                            {/* <ProfileComponent /> */}
-                            <Announcement />
+                            {/* <ProfileComponent />
+                            <Announcement /> */}
                         </Box>
                         {/* Right Side Box End */}
                     </Box>
