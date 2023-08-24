@@ -46,7 +46,6 @@ const AppHeaderDropdown = () => {
         urlExist(profilePic, (status) => {
 
           if (status === true) {
-            console.log(status)
             const picUrl = JSON.parse(profilePic)
             setSrc(picUrl)
           }
