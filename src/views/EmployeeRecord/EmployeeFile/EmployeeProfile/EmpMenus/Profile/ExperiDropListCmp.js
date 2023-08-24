@@ -4,6 +4,7 @@ import SchoolIcon from '@mui/icons-material/School';
 import WorkIcon from '@mui/icons-material/Work';
 
 const ExperiDropListCmp = ({ value }) => {
+
     const { em_institution, desg_name, em_total_year } = value;
     return (
         <CssVarsProvider>
@@ -21,7 +22,7 @@ const ExperiDropListCmp = ({ value }) => {
                         <ListItemContent>
                             <Typography level="body2" sx={{ textTransform: 'capitalize' }} >{desg_name.toLowerCase()}</Typography>
                             <Typography level="body2" noWrap sx={{ textTransform: 'capitalize' }} >
-                                &nbsp;{em_institution.toLowerCase()}{` — ${em_total_year}`} < Typography level="body4" > Year</Typography>
+                                &nbsp;{em_institution === null ? 'NIL' : em_institution.toLowerCase()}{` — ${em_total_year}`} < Typography level="body4" > Year</Typography>
                             </Typography>
                         </ListItemContent>
                     </ListItem>

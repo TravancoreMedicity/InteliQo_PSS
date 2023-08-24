@@ -5,15 +5,14 @@ import React, { memo, useEffect, useState } from 'react'
 import ArrowRightOutlinedIcon from '@mui/icons-material/ArrowRightOutlined';
 import ExperiDropListCmp from './ExperiDropListCmp';
 import { useSelector } from 'react-redux';
+import _ from 'underscore';
 
 const ProfileExperience = () => {
     const [expData, setexpData] = useState([]);
     const [status, setstatus] = useState(false);
     const [dataStat, setdataStat] = useState(false);
 
-    const state = useSelector((state) => {
-        return state.getPrifileDateEachEmp?.empExperData;
-    })
+    const state = useSelector((state) => state?.getPrifileDateEachEmp?.empExperData, _.isEqual)
 
     useEffect(() => {
         const { experienData, experienDataStatus } = state;
@@ -21,6 +20,9 @@ const ProfileExperience = () => {
             setexpData(experienData)
             setstatus(true)
             Object.keys(experienData).length > 0 && setdataStat(true)
+        } else {
+            setexpData([])
+            setstatus(false)
         }
     }, [state])
 
