@@ -20,9 +20,9 @@ const ExperiDropListCmp = ({ value }) => {
                             </Avatar>
                         </ListItemDecorator>
                         <ListItemContent>
-                            <Typography level="body2" sx={{ textTransform: 'capitalize' }} >{desg_name.toLowerCase()}</Typography>
+                            <Typography level="body2" sx={{ textTransform: 'capitalize' }} >{desg_name?.toLowerCase()}</Typography>
                             <Typography level="body2" noWrap sx={{ textTransform: 'capitalize' }} >
-                                &nbsp;{em_institution === null ? 'NIL' : em_institution.toLowerCase()}{` — ${em_total_year}`} < Typography level="body4" > Year</Typography>
+                                &nbsp;{em_institution === null ? 'NIL' : em_institution?.toLowerCase()}{` — ${em_total_year}`} < Typography level="body4" > Year</Typography>
                             </Typography>
                         </ListItemContent>
                     </ListItem>
