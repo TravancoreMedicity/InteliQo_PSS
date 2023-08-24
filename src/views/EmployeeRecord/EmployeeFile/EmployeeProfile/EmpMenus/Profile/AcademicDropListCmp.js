@@ -20,8 +20,8 @@ const AcademicDropListCmp = ({ value }) => {
                         <ListItemContent>
                             <Typography level="body2"  >{edu_desc}</Typography>
                             <Typography level="body2" noWrap sx={{ textTransform: 'capitalize' }} >
-                                &nbsp;{`${cour_desc === 'NILL' ? '' : cour_desc.toLowerCase()} ${spec_desc === 'NILL' ? '' : spec_desc.toLowerCase()}`}
-                                {unver_name === 'NILL' ? '' : ` — ${unver_name.toLowerCase()}`}
+                                &nbsp;{`${cour_desc === 'NILL' ? '' : cour_desc?.toLowerCase()} ${spec_desc === 'NILL' ? '' : spec_desc?.toLowerCase()}`}
+                                {unver_name === 'NILL' ? '' : ` — ${unver_name?.toLowerCase()}`}
                             </Typography>
                         </ListItemContent>
                     </ListItem>
