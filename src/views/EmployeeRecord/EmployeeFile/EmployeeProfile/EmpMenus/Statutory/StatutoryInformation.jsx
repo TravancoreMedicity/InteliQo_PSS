@@ -139,11 +139,11 @@ const StatutoryInformation = () => {
             create_user: employeeNumber(),
             edit_user: employeeNumber(),
             nps: nps === false ? 0 : 1,
-            npsnumber: npsnumber,
-            npsamount: npsamount,
+            npsnumber: npsnumber !== '' ? npsnumber : 0,
+            npsamount: npsamount !== '' ? npsamount : 0,
             lwf_status: lwf === false ? 0 : 1,
-            lwfnumber: lwfnumber,
-            lwfamount: lwfamount
+            lwfnumber: lwfnumber !== '' ? lwfnumber : 0,
+            lwfamount: lwfamount !== '' ? lwfamount : 0
         }
     }, [id, no, pf, pfno, uanno, esi, esino, selectGrade,
         nps, npsnumber, npsamount, lwf, lwfnumber, lwfamount])
@@ -160,11 +160,11 @@ const StatutoryInformation = () => {
             esi_slno: value,
             edit_user: employeeNumber(),
             nps: nps === false ? 0 : 1,
-            npsnumber: npsnumber,
-            npsamount: npsamount,
+            npsnumber: npsnumber !== '' ? npsnumber : 0,
+            npsamount: npsamount !== '' ? npsamount : 0,
             lwf_status: lwf === false ? 0 : 1,
-            lwfnumber: lwfnumber,
-            lwfamount: lwfamount
+            lwfnumber: lwfnumber !== '' ? lwfnumber : 0,
+            lwfamount: lwfamount !== '' ? lwfamount : 0
         }
     }, [no, pf, pfno, uanno, esi, esino, selectGrade, value,
         nps, npsnumber, npsamount, lwf, lwfnumber, lwfamount])
@@ -175,11 +175,11 @@ const StatutoryInformation = () => {
             em_no: id,
             em_id: no,
             nps: nps === false ? 0 : 1,
-            npsnumber: npsnumber,
-            npsamount: npsamount,
+            npsnumber: npsnumber !== '' ? npsnumber : 0,
+            npsamount: npsamount !== '' ? npsamount : 0,
             lwf_status: lwf === false ? 0 : 1,
-            lwfnumber: lwfnumber,
-            lwfamount: lwfamount,
+            lwfnumber: lwfnumber !== '' ? lwfnumber : 0,
+            lwfamount: lwfamount !== '' ? lwfamount : 0,
             create_user: employeeNumber(),
             edit_user: employeeNumber(),
         }
@@ -190,11 +190,11 @@ const StatutoryInformation = () => {
             em_id: no,
             edit_user: employeeNumber(),
             nps: nps === false ? 0 : 1,
-            npsnumber: npsnumber,
-            npsamount: npsamount,
+            npsnumber: npsnumber !== '' ? npsnumber : 0,
+            npsamount: npsamount !== '' ? npsamount : 0,
             lwf_status: lwf === false ? 0 : 1,
-            lwfnumber: lwfnumber,
-            lwfamount: lwfamount,
+            lwfnumber: lwfnumber !== '' ? lwfnumber : 0,
+            lwfamount: lwfamount !== '' ? lwfamount : 0,
             esi_slno: value,
         }
     }, [no, nps, npsnumber, npsamount, lwf, lwfnumber, lwfamount, value])
@@ -208,7 +208,7 @@ const StatutoryInformation = () => {
             if (success === 1) {
                 succesNofity(message)
             } else {
-                errorNofity('Error Occured!!!Please Contact EDP')
+                errorNofity(message)
             }
         } else if (value === 1 && Esiallowed === 2) {
             const result = await axioslogin.post('/empesipf/create', postNps)
@@ -216,7 +216,7 @@ const StatutoryInformation = () => {
             if (success === 1) {
                 succesNofity(message)
             } else {
-                errorNofity('Error Occured!!!Please Contact EDP')
+                errorNofity(message)
             }
         }
         else {
@@ -231,7 +231,7 @@ const StatutoryInformation = () => {
                     warningNofity(message)
                 }
                 else {
-                    errorNofity('Error Occured !!! Plaese Contact EDP')
+                    errorNofity(message)
                 }
 
             } else {
@@ -245,7 +245,7 @@ const StatutoryInformation = () => {
                     warningNofity(message)
                 }
                 else {
-                    errorNofity('Error Occured !!! Plaese Contact EDP')
+                    errorNofity(message)
                 }
             }
         }

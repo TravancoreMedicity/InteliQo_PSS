@@ -78,7 +78,7 @@ const Home = () => {
                             flexDirection: { xl: "column", lg: "column", md: "column", sm: "row" },
                             padding: 0.5,
                         }} >
-                            <ProfileComponent />
+                            {/* <ProfileComponent /> */}
                             <Announcement />
                         </Box>
                         {/* Right Side Box End */}

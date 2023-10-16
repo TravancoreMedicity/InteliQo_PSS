@@ -28,7 +28,6 @@ import PerformanceApproval from '../Menus/PerformaneApproval'
 import TrainingAndDevelopment from '../Menus/TrainingAndDevelopment'
 import Resignation from '../Menus/Resignation'
 import { getMenuSlno } from 'src/views/Constant/Constant'
-import CIcon from '@coreui/icons-react'
 import { CssVarsProvider, Typography } from '@mui/joy'
 import { Box } from '@mui/material'
 
@@ -128,7 +127,7 @@ const AppSidebar = () => {
       empid: emp_id
     }
     dispatch({ type: FETCH_LOGIN_CRED, payload: loggedDetl })
-  }, [])
+  }, [dispatch, FETCH_LOGIN_CRED])
 
 
   useEffect(() => {
