@@ -148,14 +148,14 @@ const EmployeeFileAgGrid = () => {
             <Box sx={{ display: 'flex', flex: 1, px: 0.8, mt: 0.3, flexDirection: 'column', width: '100%' }}>
                 <Paper square elevation={1}  >
                     <Box sx={{ display: "flex", flexDirection: "row", pt: 1, justifyItems: 'flex-start' }}>
-                        <Box sx={{ p: 1, width: '25%' }} >
+                        <Box sx={{ p: 1, flex: 1 }} >
                             <DeptSelectByRedux setValue={setDepartment} value={deptName} />
                         </Box>
-                        <Box sx={{ p: 1, width: '25%' }}>
+                        <Box sx={{ p: 1, flex: 1 }}>
                             <DeptSecSelectByRedux dept={deptName} setValue={setDepartSecName} value={deptSecName} />
                         </Box>
                         <Tooltip title="Employee Number" followCursor placement='top' arrow>
-                            <Box sx={{ p: 1, width: '25%' }}>
+                            <Box sx={{ p: 1, flex: 1 }}>
                                 <TextField fullWidth
                                     id="fullWidth" size="small"
                                     onChange={(e) => setEmpNo(e.target.value)}
@@ -183,6 +183,8 @@ const EmployeeFileAgGrid = () => {
                                     <SearchIcon />
                                 </IconButton>
                             </CssVarsProvider>
+                        </Box>
+                        <Box sx={{ p: 1, flex: 1 }}>
                         </Box>
                     </Box>
                     {/* First Row end */}
